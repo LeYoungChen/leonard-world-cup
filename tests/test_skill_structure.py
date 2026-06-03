@@ -36,7 +36,15 @@ class SkillStructureTests(unittest.TestCase):
         positioning = (SKILL_DIR / "references" / "public-positioning.md").read_text(encoding="utf-8")
         outputs = (SKILL_DIR / "references" / "output-formats.md").read_text(encoding="utf-8")
 
-        for phrase in ["no-vig", "Brier score", "Rahul Savani", "robustness"]:
+        for phrase in [
+            "no-vig",
+            "Brier score",
+            "Dixon-Coles",
+            "Maher",
+            "Avellaneda-Stoikov",
+            "proper scoring rules",
+            "robustness",
+        ]:
             self.assertIn(phrase, modeling)
 
         for phrase in ["not betting advice", "forbidden", "clickable source"]:
@@ -44,6 +52,25 @@ class SkillStructureTests(unittest.TestCase):
 
         for phrase in ["Markdown table", "JSON", "Mermaid", "source table"]:
             self.assertIn(phrase, outputs)
+
+    def test_public_files_do_not_expose_private_research_lineage_names(self):
+        public_files = [
+            SKILL_DIR / "SKILL.md",
+            SKILL_DIR / "references" / "modeling.md",
+            SKILL_DIR / "references" / "public-positioning.md",
+            ROOT / "docs" / "superpowers" / "specs" / "2026-06-03-world-cup-match-predictor-design.md",
+            ROOT / "README.md",
+        ]
+        forbidden_names = ["Rahul", "Savani", "Spooner", "Koukorinis"]
+
+        hits = []
+        for path in public_files:
+            text = path.read_text(encoding="utf-8")
+            for name in forbidden_names:
+                if name in text:
+                    hits.append(f"{path.relative_to(ROOT)} contains {name}")
+
+        self.assertEqual(hits, [])
 
     def test_openai_yaml_has_required_interface_fields(self):
         text = (SKILL_DIR / "agents" / "openai.yaml").read_text(encoding="utf-8")

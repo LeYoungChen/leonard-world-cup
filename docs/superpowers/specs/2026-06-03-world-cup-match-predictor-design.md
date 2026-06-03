@@ -8,16 +8,17 @@
 
 内部逻辑要专业：每次预测都实时检索公开网络信息，检查来源质量，把球队基本面、赔率隐含概率、市场信息流、伤停和赛程背景合成一个可解释的概率判断。
 
-这个 skill 不是 Rahul Savani 教授的资料包，也不是把他的个人信息放进 skill 里。教授相关内容只作为方法论来源：他的公开研究方向包括算法博弈论、自动交易、Agent-Based Modelling、Reinforcement Learning，以及面向金融和体育博彩市场的交易算法设计与评估。skill 真正运行时，必须基于当前比赛的公开信息和建模流程，而不是基于静态人物资料。
+这个 skill 不是任何个人研究者的资料包，也不是把某位教授或某个团队的个人信息放进 skill 里。相关研究只作为方法论来源：足球比分统计建模、固定赔率市场效率、市场微结构、Agent-Based Modelling、Reinforcement Learning、风险控制和概率校准。skill 真正运行时，必须基于当前比赛的公开信息和建模流程，而不是基于静态人物资料。
 
 虽然当前实现会优先落在 Codex skill 目录里，但文档、资源和输出格式都要尽量保持平台无关。其他 agent 即使没有 Codex 的 skill 机制，也应该能通过读取 `SKILL.md`、参考文件和脚本来执行同样流程。
 
-参考来源：
+代表性公开研究来源：
 
-- [University of Liverpool: Professor Rahul Savani Research](https://www.liverpool.ac.uk/people/rahul-savani/research)
-- [Rahul Savani Publications](https://cgi.csc.liv.ac.uk/~rahul/publications.html)
-- [Market Making via Reinforcement Learning, Spooner/Fearnley/Savani/Koukorinis, 2018](https://arxiv.org/abs/1804.04216)
-- [Robust Market Making via Adversarial Reinforcement Learning, Spooner/Savani, 2020](https://arxiv.org/abs/2003.01820)
+- [Modelling association football scores, Maher, 1982](https://www.90minut.pl/misc/maher.pdf)
+- [Modelling Association Football Scores and Inefficiencies in the Football Betting Market, Dixon-Coles, 1997](https://www.research.lancs.ac.uk/portal/en/publications/modelling-association-football-scores-and-inefficiencies-in-the-football-betting-market%28d16276a2-d6e0-483b-a708-1d29663f1992%29.html)
+- [Modelling football match results and the efficiency of fixed-odds betting, Goddard, 2005](https://www.stat.berkeley.edu/users/aldous/157/Papers/goddard.pdf)
+- [High-frequency trading in a limit order book, Avellaneda-Stoikov, 2008](https://econpapers.repec.org/RePEc%3Ataf%3Aquantf%3Av%3A8%3Ay%3A2008%3Ai%3A3%3Ap%3A217-224)
+- [Strictly Proper Scoring Rules, Prediction, and Estimation, Gneiting-Raftery, 2007](https://stat.uw.edu/research/tech-reports/strictly-proper-scoring-rules-prediction-and-estimation-revised)
 
 ## 使用对象
 
@@ -138,19 +139,19 @@ skill 的专业性来自三件事：
 - 如果来源之间冲突，必须在输出里说明冲突，而不是选择性忽略。
 - 不要把没有链接的“据报道”“外界认为”“市场普遍认为”当作有效依据。
 
-## Rahul Savani 研究如何融入
+## 领域权威研究如何融入
 
-这里融入的是研究思想，不是人物包装。
+这里融入的是领域研究思想，不是人物包装。
 
 ### 1. 把赔率看作市场价格
 
-Savani 相关公开研究涉及自动交易和市场微结构。映射到世界杯预测时，赔率不是“下注入口”，而是一种聚合了大量市场参与者判断的信息价格。
+市场效率和市场微结构研究会把价格看作信息聚合结果。映射到世界杯预测时，赔率不是“下注入口”，而是一种聚合了大量市场参与者判断的信息价格。
 
 skill 会把赔率转换为隐含概率，并去除 bookmaker overround，得到 no-vig market probability。这个市场概率可以作为强基线，但不能被当作真相。
 
 ### 2. 把预测看作风险控制问题
 
-`Market Making via Reinforcement Learning` 的核心之一是：交易智能体不仅要追求收益，还要控制 inventory risk。映射到预测 skill 时，就是不能只给一个激进结论，而要管理模型不确定性。
+市场微结构和做市模型强调：面对不确定价格和交易流，系统不能只追逐单一方向，还要控制 inventory risk。映射到预测 skill 时，就是不能只给一个激进结论，而要管理模型不确定性。
 
 具体体现：
 
@@ -161,7 +162,7 @@ skill 会把赔率转换为隐含概率，并去除 bookmaker overround，得到
 
 ### 3. 引入鲁棒性思维
 
-`Robust Market Making via Adversarial Reinforcement Learning` 强调在对抗性和变化的市场条件下保持稳健。映射到世界杯预测时，skill 要避免被单一异常信息带偏。
+鲁棒建模和强化学习研究都强调在变化环境下保持稳健。映射到世界杯预测时，skill 要避免被单一异常信息带偏。
 
 具体体现：
 
@@ -172,7 +173,7 @@ skill 会把赔率转换为隐含概率，并去除 bookmaker overround，得到
 
 ### 4. 用评估指标约束模型
 
-Savani 的研究不是只讲故事，而是强调算法评估。skill 后续实现时应支持回测和校准评估。
+专业预测不能只讲故事，而要强调算法评估。skill 后续实现时应支持回测和校准评估。
 
 可用指标：
 
@@ -418,7 +419,7 @@ B 队胜 | 00%
 
 不创建：
 
-- Rahul Savani 个人资料长文。
+- 任何个人研究者的资料长文。
 - 静态预测结论库。
 - 下注执行脚本。
 - 投注金额推荐工具。

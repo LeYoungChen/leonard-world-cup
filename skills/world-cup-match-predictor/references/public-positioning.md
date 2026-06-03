@@ -82,4 +82,4 @@ Confidence: Medium
 Why: strength prior, market signal, and injury context point in the same direction, but lineup uncertainty keeps the forecast moderate.
 ```
 
-Keep Rahul Savani references out of default public posts. Mention research lineage only when the user asks for technical credibility.
+Keep individual origin stories out of default public posts. Mention field-level research lineage only when the user asks for technical credibility.

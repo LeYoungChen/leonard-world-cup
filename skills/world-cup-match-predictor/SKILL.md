@@ -21,7 +21,7 @@ This is a cross-agent workflow. Keep instructions portable: use Markdown, ordina
 
 ## When You Need More Detail
 
-- Read `references/modeling.md` for probability methods, odds no-vig conversion, Rahul Savani research lineage, robustness, and evaluation metrics.
+- Read `references/modeling.md` for probability methods, odds no-vig conversion, football modeling literature, market microstructure ideas, robustness, and evaluation metrics.
 - Read `references/public-positioning.md` for public packaging, safe wording, and forbidden claims.
 - Read `references/output-formats.md` for Markdown tables, source tables, Mermaid sketches, and JSON schema.
 - Use `scripts/normalize_odds.py` when decimal 1X2 odds need deterministic raw and no-vig probability conversion.
