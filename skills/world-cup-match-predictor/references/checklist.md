@@ -5,7 +5,7 @@ Run through this before delivering any forecast. It turns the hard constraints i
 ## P0 · Must pass
 
 - [ ] Every material claim has a clickable source link. No "market consensus", "reports say", or unlinked numbers driving the forecast.
-- [ ] Probabilities are whole percentages and sum to exactly 100% (use `scripts/normalize_odds.py` to correct rounding drift).
+- [ ] Probabilities are whole percentages and sum to exactly 100% (compute with the no-vig steps in `modeling.md`, or `scripts/normalize_odds.py` if shipped, to correct rounding drift).
 - [ ] No forbidden language anywhere in the output: guaranteed profit, lock, must bet, stake size, bankroll allocation, arbitrage execution, sure win, bookmaker loophole, risk-free.
 - [ ] No stake sizing, no sportsbook selection, no "how/where to bet". A betting-advice request is redirected to probability, uncertainty, and risk.
 - [ ] Odds are presented as market-implied probabilities, not betting instructions. State source, retrieval time, and whether each probability is raw or no-vig.

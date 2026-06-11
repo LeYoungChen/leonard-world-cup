@@ -44,7 +44,7 @@ Map the research into the predictor this way:
 
 ## Decimal Odds To No-Vig Probability
 
-For 1X2 decimal odds:
+This conversion is the primary path and needs no script. For 1X2 decimal odds:
 
 ```text
 raw implied probability = 1 / decimal odds
@@ -52,10 +52,26 @@ overround = sum(raw implied probabilities)
 no-vig probability = raw probability / overround
 ```
 
-Use `scripts/normalize_odds.py` for deterministic conversion:
+Worked example with odds 1.80 / 3.60 / 4.80:
+
+```text
+raw      = 1/1.80, 1/3.60, 1/4.80      = 0.5556, 0.2778, 0.2083
+overround= 0.5556 + 0.2778 + 0.2083    = 1.0417
+no-vig   = each raw / 1.0417           = 0.5333, 0.2667, 0.2000
+percent  = 53%, 27%, 20%               (sum = 100%)
+```
+
+Rounding rule: round each no-vig probability to whole percent, then if the
+three do not sum to 100, add or subtract the leftover points on the
+largest-probability outcome so the table totals exactly 100%.
+
+`scripts/normalize_odds.py` is an **optional convenience** that performs the
+exact same arithmetic deterministically. The skill works fully without it;
+distributions that cannot ship `.py` files can omit `scripts/` entirely and
+compute by hand using the steps above.
 
 ```bash
-python3 scripts/normalize_odds.py 1.80 3.60 4.80
+python3 scripts/normalize_odds.py 1.80 3.60 4.80   # optional, if available
 ```
 
 Do not copy sportsbook percentages directly into the final forecast. State source, retrieval time, and whether the probability is raw or no-vig.

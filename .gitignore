@@ -6,3 +6,6 @@ __pycache__/
 .env
 .venv/
 venv/
+
+# Build output (py-free skill package for upload)
+dist/

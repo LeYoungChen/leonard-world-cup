@@ -47,6 +47,19 @@ python3 skills/world-cup-match-predictor/scripts/normalize_odds.py 1.80 3.60 4.8
 
 输出 JSON 包含：输入赔率、原始隐含概率、过水值（overround）、去水概率，以及校正到合计 100% 的百分比。
 
+该脚本是**可选项**。Skill 也能按 `references/modeling.md` 里的步骤手动完成同样的去水转换。
+
+## 无 py 版本（用于禁止 `.py` 上传的平台）
+
+部分平台（如小红书）不接受 `.py` 文件。用下面的命令生成一份不含 `scripts/` 文件夹的 skill 副本：
+
+```bash
+scripts/build-xhs-package.sh
+# 输出：dist/world-cup-match-predictor-noscript/
+```
+
+其余无需改动——赔率改用 `references/modeling.md` 的步骤手算。
+
 ## 安全边界
 
 这个工作流用于**概率预测和证据解释**。它不是投注建议、不是金融建议、不做注码管理，也不是自动下注系统。

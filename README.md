@@ -60,6 +60,19 @@ The helper emits JSON with:
 - no-vig probabilities,
 - rounded percentages corrected to total 100.
 
+The helper is **optional**. The skill computes the same no-vig conversion by hand using the steps in `references/modeling.md`.
+
+## Py-Free Package (for hosts that forbid `.py` uploads)
+
+Some skill marketplaces (e.g. Xiaohongshu) do not accept `.py` files. Build a copy of the skill without the `scripts/` folder:
+
+```bash
+scripts/build-xhs-package.sh
+# output: dist/world-cup-match-predictor-noscript/
+```
+
+Nothing else changes — odds are converted by hand using `references/modeling.md`.
+
 ## Safety Boundary
 
 This workflow is for probability forecasting and evidence explanation. It is not betting advice, financial advice, stake sizing, or an automated wagering system.

@@ -43,14 +43,16 @@ world-cup-match-predictor/
 │   ├── public-positioning.md       ← safe wording, forbidden language, betting redirect
 │   ├── output-formats.md           ← Markdown/source tables, Mermaid sketches, JSON schema
 │   └── checklist.md                ← pre-delivery self-check for the hard constraints
-└── scripts/
-    └── normalize_odds.py           ← deterministic decimal → raw + no-vig probability conversion
+└── scripts/                        ← optional; omit on hosts that forbid .py uploads
+    └── normalize_odds.py           ← convenience: decimal → raw + no-vig (same math as the manual steps)
 ```
+
+> Portability note: `scripts/` is optional. The skill computes odds by hand using the steps in `references/modeling.md`. On hosts that do not allow `.py` files (e.g. some skill marketplaces), ship without the `scripts/` folder — nothing else needs to change.
 
 Suggested load order:
 
 1. Read this `SKILL.md` first for the rules, scope, and workflow.
-2. Before forecasting, read `references/modeling.md` to build the probability estimate, and run `scripts/normalize_odds.py` on any decimal odds.
+2. Before forecasting, read `references/modeling.md` to build the probability estimate, and convert any decimal odds with the no-vig steps there (or run `scripts/normalize_odds.py` if it is present).
 3. Before writing public-facing wording, read `references/public-positioning.md`.
 4. When the user wants tables, visuals, or JSON, read `references/output-formats.md`.
 5. Before delivering, run through `references/checklist.md`.
@@ -61,7 +63,7 @@ Suggested load order:
 - Read `references/public-positioning.md` for public packaging, safe wording, and forbidden claims.
 - Read `references/output-formats.md` for Markdown tables, source tables, Mermaid sketches, and JSON schema.
 - Read `references/checklist.md` before delivering, to verify links, normalization, and safe language.
-- Use `scripts/normalize_odds.py` when decimal 1X2 odds need deterministic raw and no-vig probability conversion.
+- Use `scripts/normalize_odds.py` when decimal 1X2 odds need deterministic raw and no-vig probability conversion. If the script is not shipped, follow the manual no-vig steps in `references/modeling.md` instead.
 
 ## Workflow
 
