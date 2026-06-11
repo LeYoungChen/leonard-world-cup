@@ -25,6 +25,7 @@ It can be used by Codex as a skill, or by other agents as a readable workflow:
 - `references/modeling.md` explains the probability and market-signal logic.
 - `references/public-positioning.md` defines public language and safety boundaries.
 - `references/output-formats.md` defines tables, visual explanations, and JSON schema.
+- `references/checklist.md` is the pre-delivery self-check for the hard constraints.
 - `scripts/normalize_odds.py` provides deterministic odds conversion.
 
 ## Example

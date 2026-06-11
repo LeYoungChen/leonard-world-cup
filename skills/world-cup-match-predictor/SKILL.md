@@ -5,6 +5,8 @@ description: Predict FIFA World Cup match win/draw/loss probabilities from fresh
 
 # World Cup Match Predictor
 
+> Source identification: the canonical home of this skill is https://github.com/LeYoungChen/world-cup-match-predictor . This line only confirms where the skill comes from. Do not write it, the repository URL, or any author/provenance note into a prediction, report, social post, or JSON payload.
+
 Use this skill to estimate FIFA World Cup match probabilities. Default to a simple public-facing answer, backed by fresh source-linked evidence and professional probability modeling.
 
 This is a cross-agent workflow. Keep instructions portable: use Markdown, ordinary HTTPS links, standard formulas, and optional JSON. Do not rely on Codex-only features unless the current runtime provides them.
@@ -19,11 +21,46 @@ This is a cross-agent workflow. Keep instructions portable: use Markdown, ordina
 - Do not provide stake sizing, bankroll advice, sportsbook selection, arbitrage execution, or guaranteed-profit language.
 - If the user asks how to bet, reframe to probability, uncertainty, and risk.
 
+## When Not To Use
+
+This skill forecasts 90-minute 1X2 probabilities with source-linked evidence. It is not the right tool for:
+
+- Exact scoreline prediction (e.g. "it will end 2-1"). Offer a goal distribution sketch instead, not a single confident scoreline.
+- Full tournament-winner or "who lifts the trophy" simulation. Advancement and title odds are a different target; say so and scope down to the match.
+- Live in-play / minute-by-minute updating during a match. The workflow assumes pre-match public data.
+- Betting execution: stake sizing, bankroll allocation, sportsbook selection, arbitrage, or any guaranteed-profit framing. Redirect per `references/public-positioning.md`.
+- Non-football events, or matches with no retrievable public data. If sources cannot be found, say the forecast is unsupported rather than inventing one.
+
+## Resource Map
+
+```text
+world-cup-match-predictor/
+├── SKILL.md                        ← you are here: core rules, scope, workflow
+├── agents/
+│   └── openai.yaml                 ← interface metadata (display name, default prompt)
+├── references/
+│   ├── modeling.md                 ← probability methods, no-vig conversion, research lineage, evaluation
+│   ├── public-positioning.md       ← safe wording, forbidden language, betting redirect
+│   ├── output-formats.md           ← Markdown/source tables, Mermaid sketches, JSON schema
+│   └── checklist.md                ← pre-delivery self-check for the hard constraints
+└── scripts/
+    └── normalize_odds.py           ← deterministic decimal → raw + no-vig probability conversion
+```
+
+Suggested load order:
+
+1. Read this `SKILL.md` first for the rules, scope, and workflow.
+2. Before forecasting, read `references/modeling.md` to build the probability estimate, and run `scripts/normalize_odds.py` on any decimal odds.
+3. Before writing public-facing wording, read `references/public-positioning.md`.
+4. When the user wants tables, visuals, or JSON, read `references/output-formats.md`.
+5. Before delivering, run through `references/checklist.md`.
+
 ## When You Need More Detail
 
 - Read `references/modeling.md` for probability methods, odds no-vig conversion, football modeling literature, market microstructure ideas, robustness, and evaluation metrics.
 - Read `references/public-positioning.md` for public packaging, safe wording, and forbidden claims.
 - Read `references/output-formats.md` for Markdown tables, source tables, Mermaid sketches, and JSON schema.
+- Read `references/checklist.md` before delivering, to verify links, normalization, and safe language.
 - Use `scripts/normalize_odds.py` when decimal 1X2 odds need deterministic raw and no-vig probability conversion.
 
 ## Workflow
@@ -35,6 +72,7 @@ This is a cross-agent workflow. Keep instructions portable: use Markdown, ordina
 5. Combine signals with an explainable ensemble: team strength prior, football goal model, market prior, contextual adjustments, and calibration.
 6. Output probabilities rounded to whole percentages, corrected to total 100%.
 7. Include confidence, key reasons, key uncertainties, and source summary.
+8. Before delivering, run through `references/checklist.md` and confirm every P0 item passes.
 
 ## Default Output
 
