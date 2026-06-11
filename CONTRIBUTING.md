@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping improve `world-cup-match-predictor`.
+Thanks for helping improve `leonard-world-cup`.
 
 This project is a portable Skill for AI agents that estimate FIFA World Cup 90-minute win/draw/loss probabilities from fresh public information, market-implied probabilities, and explainable football modeling. The most useful contributions are specific, reproducible, and tied to real forecast output.
 
@@ -38,7 +38,7 @@ For changes to modeling or output:
 
 ```bash
 python3 -m unittest discover -s tests -v
-python3 skills/world-cup-match-predictor/scripts/normalize_odds.py 1.80 3.60 4.80
+python3 skills/leonard-world-cup/scripts/normalize_odds.py 1.80 3.60 4.80
 ```
 
 ## Good PRs Usually Include

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Leonard World Cup"
+  short_description: "Source-linked World Cup probability forecasts"
+  default_prompt: "Use $leonard-world-cup to estimate a FIFA World Cup match's 90-minute win/draw/loss probabilities with clickable sources."

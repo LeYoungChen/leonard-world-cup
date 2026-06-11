@@ -1,10 +1,10 @@
-# World Cup Match Predictor Implementation Plan
+# Leonard World Cup Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Build a portable World Cup match prediction skill/workflow with professional probability modeling guidance, clickable source requirements, table/visual output formats, and a deterministic odds-normalization helper.
 
-**Architecture:** Keep the public repository self-contained under `skills/world-cup-match-predictor/`, with a Codex-compatible `SKILL.md`, portable references, and Python scripts/tests. Also install a copy into `${CODEX_HOME:-$HOME/.codex}/skills/world-cup-match-predictor` after validation.
+**Architecture:** Keep the public repository self-contained under `skills/leonard-world-cup/`, with a Codex-compatible `SKILL.md`, portable references, and Python scripts/tests. Also install a copy into `${CODEX_HOME:-$HOME/.codex}/skills/leonard-world-cup` after validation.
 
 **Tech Stack:** Markdown, Python 3 standard library, `unittest`, Git, GitHub REST API.
 
@@ -13,7 +13,7 @@
 ### Task 1: Odds Normalization Script
 
 **Files:**
-- Create: `skills/world-cup-match-predictor/scripts/normalize_odds.py`
+- Create: `skills/leonard-world-cup/scripts/normalize_odds.py`
 - Create: `tests/test_normalize_odds.py`
 
 - [ ] **Step 1: Write failing tests**
@@ -42,11 +42,11 @@ Expected: PASS.
 ### Task 2: Skill Markdown Resources
 
 **Files:**
-- Create: `skills/world-cup-match-predictor/SKILL.md`
-- Create: `skills/world-cup-match-predictor/references/modeling.md`
-- Create: `skills/world-cup-match-predictor/references/public-positioning.md`
-- Create: `skills/world-cup-match-predictor/references/output-formats.md`
-- Create: `skills/world-cup-match-predictor/agents/openai.yaml`
+- Create: `skills/leonard-world-cup/SKILL.md`
+- Create: `skills/leonard-world-cup/references/modeling.md`
+- Create: `skills/leonard-world-cup/references/public-positioning.md`
+- Create: `skills/leonard-world-cup/references/output-formats.md`
+- Create: `skills/leonard-world-cup/agents/openai.yaml`
 - Create: `tests/test_skill_structure.py`
 
 - [ ] **Step 1: Write failing structure tests**
@@ -70,7 +70,7 @@ Expected: PASS.
 ### Task 3: Validation And Local Installation
 
 **Files:**
-- Modify: `${CODEX_HOME:-$HOME/.codex}/skills/world-cup-match-predictor/*`
+- Modify: `${CODEX_HOME:-$HOME/.codex}/skills/leonard-world-cup/*`
 
 - [ ] **Step 1: Run Python tests**
 
@@ -79,16 +79,16 @@ Expected: PASS.
 
 - [ ] **Step 2: Run Codex skill validator**
 
-Run: `python3 /Users/chen/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/world-cup-match-predictor`
+Run: `python3 /Users/chen/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/leonard-world-cup`
 Expected: PASS.
 
 - [ ] **Step 3: Install local copy**
 
-Copy `skills/world-cup-match-predictor` into `${CODEX_HOME:-$HOME/.codex}/skills/world-cup-match-predictor`.
+Copy `skills/leonard-world-cup` into `${CODEX_HOME:-$HOME/.codex}/skills/leonard-world-cup`.
 
 - [ ] **Step 4: Validate installed copy**
 
-Run: `python3 /Users/chen/.codex/skills/.system/skill-creator/scripts/quick_validate.py ${CODEX_HOME:-$HOME/.codex}/skills/world-cup-match-predictor`
+Run: `python3 /Users/chen/.codex/skills/.system/skill-creator/scripts/quick_validate.py ${CODEX_HOME:-$HOME/.codex}/skills/leonard-world-cup`
 Expected: PASS.
 
 ### Task 4: Public GitHub Repository
@@ -115,7 +115,7 @@ Commit implementation with message `feat: add world cup match predictor skill`.
 
 - [ ] **Step 5: Create public GitHub repository and push**
 
-Use local GitHub authentication from `~/.config/gh/hosts.yml` with the GitHub REST API if available. Create a public repo named `world-cup-match-predictor`, add remote, and push `main`.
+Use local GitHub authentication from `~/.config/gh/hosts.yml` with the GitHub REST API if available. Create a public repo named `leonard-world-cup`, add remote, and push `main`.
 
 ---
 

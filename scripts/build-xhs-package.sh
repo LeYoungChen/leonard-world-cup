@@ -10,7 +10,7 @@
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-SRC="$REPO_ROOT/skills/world-cup-match-predictor"
+SRC="$REPO_ROOT/skills/leonard-world-cup"
 OUT="${1:-$REPO_ROOT/dist/leonard-world-cup}"
 
 rm -rf "$OUT"

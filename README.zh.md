@@ -1,4 +1,4 @@
-# 世界杯比赛预测器（World Cup Match Predictor）
+# Leonard World Cup（世界杯比赛预测器）
 
 一个可跨 agent 移植的 Skill / 工作流，用于基于**实时公开信息**、**市场隐含概率**和**可解释的足球建模**，估算 FIFA 世界杯比赛 90 分钟内的胜 / 平 / 负概率。
 
@@ -23,7 +23,7 @@
 ## Skill 位置
 
 ```text
-skills/world-cup-match-predictor/
+skills/leonard-world-cup/
 ```
 
 - `SKILL.md`：核心规则、适用范围、工作流。
@@ -36,13 +36,13 @@ skills/world-cup-match-predictor/
 ## 示例
 
 ```text
-用 $world-cup-match-predictor 估算阿根廷 vs 法国 90 分钟胜/平/负概率，并附可点击来源。
+用 $leonard-world-cup 估算阿根廷 vs 法国 90 分钟胜/平/负概率，并附可点击来源。
 ```
 
 ## 赔率工具
 
 ```bash
-python3 skills/world-cup-match-predictor/scripts/normalize_odds.py 1.80 3.60 4.80
+python3 skills/leonard-world-cup/scripts/normalize_odds.py 1.80 3.60 4.80
 ```
 
 输出 JSON 包含：输入赔率、原始隐含概率、过水值（overround）、去水概率，以及校正到合计 100% 的百分比。

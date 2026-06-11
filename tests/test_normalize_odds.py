@@ -7,7 +7,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SCRIPT = ROOT / "skills" / "world-cup-match-predictor" / "scripts" / "normalize_odds.py"
+SCRIPT = ROOT / "skills" / "leonard-world-cup" / "scripts" / "normalize_odds.py"
 
 
 def load_module():

@@ -1,4 +1,0 @@
-interface:
-  display_name: "World Cup Match Predictor"
-  short_description: "Source-linked World Cup probability forecasts"
-  default_prompt: "Use $world-cup-match-predictor to estimate a FIFA World Cup match's 90-minute win/draw/loss probabilities with clickable sources."

@@ -1,4 +1,4 @@
-# World Cup Match Predictor
+# Leonard World Cup
 
 A portable skill/workflow for estimating FIFA World Cup 90-minute win/draw/loss probabilities from fresh public information, market-implied probabilities, and explainable football modeling.
 
@@ -16,7 +16,7 @@ A portable skill/workflow for estimating FIFA World Cup 90-minute win/draw/loss 
 The portable skill lives at:
 
 ```text
-skills/world-cup-match-predictor/
+skills/leonard-world-cup/
 ```
 
 It can be used by Codex as a skill, or by other agents as a readable workflow:
@@ -31,7 +31,7 @@ It can be used by Codex as a skill, or by other agents as a readable workflow:
 ## Example
 
 ```text
-Use $world-cup-match-predictor to estimate Argentina vs France 90-minute win/draw/loss probabilities with clickable sources.
+Use $leonard-world-cup to estimate Argentina vs France 90-minute win/draw/loss probabilities with clickable sources.
 ```
 
 Expected output shape:
@@ -49,7 +49,7 @@ The full answer should also include a lean, confidence level, key reasons, key u
 ## Odds Helper
 
 ```bash
-python3 skills/world-cup-match-predictor/scripts/normalize_odds.py 1.80 3.60 4.80
+python3 skills/leonard-world-cup/scripts/normalize_odds.py 1.80 3.60 4.80
 ```
 
 The helper emits JSON with:
@@ -81,5 +81,5 @@ This workflow is for probability forecasting and evidence explanation. It is not
 
 ```bash
 python3 -m unittest discover -s tests -v
-python3 /Users/chen/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/world-cup-match-predictor
+python3 /Users/chen/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/leonard-world-cup
 ```

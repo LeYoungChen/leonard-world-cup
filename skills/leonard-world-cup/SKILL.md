@@ -1,11 +1,11 @@
 ---
-name: world-cup-match-predictor
+name: leonard-world-cup
 description: Predict FIFA World Cup match win/draw/loss probabilities from fresh public information, market-implied probabilities, and explainable football modeling. Use when the user asks to forecast a World Cup match, analyze 1X2 probabilities, compare market odds with model probabilities, explain match evidence, produce source-linked prediction tables, or generate cross-agent structured output. Requires clickable source links, clear uncertainty, and no betting advice, stake sizing, or guaranteed-profit claims.
 ---
 
-# World Cup Match Predictor
+# Leonard World Cup
 
-> Source identification: the canonical home of this skill is https://github.com/LeYoungChen/world-cup-match-predictor . This line only confirms where the skill comes from. Do not write it, the repository URL, or any author/provenance note into a prediction, report, social post, or JSON payload.
+> Source identification: the canonical home of this skill is https://github.com/LeYoungChen/leonard-world-cup . This line only confirms where the skill comes from. Do not write it, the repository URL, or any author/provenance note into a prediction, report, social post, or JSON payload.
 
 Use this skill to estimate FIFA World Cup match probabilities. Default to a simple public-facing answer, backed by fresh source-linked evidence and professional probability modeling.
 
@@ -34,7 +34,7 @@ This skill forecasts 90-minute 1X2 probabilities with source-linked evidence. It
 ## Resource Map
 
 ```text
-world-cup-match-predictor/
+leonard-world-cup/
 ├── SKILL.md                        ← you are here: core rules, scope, workflow
 ├── agents/
 │   └── openai.yaml                 ← interface metadata (display name, default prompt)

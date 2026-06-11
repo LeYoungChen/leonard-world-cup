@@ -2,7 +2,7 @@
 
 ## 目标
 
-创建一个可跨 agent 使用的 skill / workflow，名称暂定为 `world-cup-match-predictor`，用于预测 FIFA 世界杯比赛的胜 / 平 / 负概率。
+创建一个可跨 agent 使用的 skill / workflow，名称暂定为 `leonard-world-cup`，用于预测 FIFA 世界杯比赛的胜 / 平 / 负概率。
 
 对外包装要简单：用户输入一场世界杯比赛，skill 输出双方胜率、平局概率、置信度和几条清晰理由。
 

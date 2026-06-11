@@ -15,7 +15,7 @@
 ## Validation
 
 - [ ] `python3 -m unittest discover -s tests -v`
-- [ ] `python3 skills/world-cup-match-predictor/scripts/normalize_odds.py 1.80 3.60 4.80`
+- [ ] `python3 skills/leonard-world-cup/scripts/normalize_odds.py 1.80 3.60 4.80`
 - [ ] Walked `references/checklist.md` P0 items
 
 ## Notes
