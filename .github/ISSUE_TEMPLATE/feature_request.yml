@@ -1,0 +1,39 @@
+name: Feature request
+description: Suggest a new signal, output format, evaluation method, or capability.
+title: "feat: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: Please describe the real forecasting situation behind the request.
+      placeholder: "When forecasting knockout matches, I often need..."
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What do you want the Skill to do?
+      placeholder: "Add support for..."
+    validations:
+      required: true
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples or references
+      description: Sources, formulas, links, or example forecasts are welcome.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Data signals (form, xG, rankings, odds)
+        - Modeling / calibration
+        - Output format (tables / JSON / visuals)
+        - Evaluation (Brier, log loss, calibration)
+        - Portability / packaging
+        - Documentation
+        - Other
+    validations:
+      required: true

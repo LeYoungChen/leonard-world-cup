@@ -1,0 +1,57 @@
+name: Bug report
+description: Report a reproducible forecasting, probability, or safety-boundary bug.
+title: "bug: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. A concrete prompt and the full generated forecast are the fastest way to make this actionable.
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Describe the issue clearly.
+      placeholder: "The probability table summed to 101%..."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+      placeholder: "Probabilities should be corrected to total 100%."
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How can we reproduce it?
+      description: Include the prompt, the match, any odds you fed in, and the generated output.
+      placeholder: |
+        1. Use this prompt...
+        2. Feed these decimal odds...
+        3. Read the probability table...
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Generated forecast
+      description: Paste the full forecast (probability table, reasons, uncertainty, sources).
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: "Claude Code / Codex / Cursor, macOS 15, Python 3.12..."
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Source discipline (missing or unlinked claim)
+        - Probability / no-vig conversion
+        - Safety boundary (betting language leaked)
+        - Output format (table / JSON / Mermaid)
+        - Other / unsure
+    validations:
+      required: true

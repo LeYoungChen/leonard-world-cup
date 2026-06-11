@@ -1,0 +1,17 @@
+name: Question
+description: Ask about installation, usage, modeling, or output formats.
+title: "question: "
+labels: ["question"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      placeholder: "How should I..."
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: What have you tried? Which agent and runtime are you using?
