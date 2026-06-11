@@ -62,13 +62,13 @@ The helper emits JSON with:
 
 The helper is **optional**. The skill computes the same no-vig conversion by hand using the steps in `references/modeling.md`.
 
-## Py-Free Package (for hosts that forbid `.py` uploads)
+## Markdown-Only Package (for hosts that only accept `.md` / `.txt`)
 
-Some skill marketplaces (e.g. Xiaohongshu) do not accept `.py` files. Build a copy of the skill without the `scripts/` folder:
+Some skill marketplaces (e.g. Xiaohongshu) accept only Markdown / text files — no `.py`, no `.yaml`. Build a copy that keeps the Markdown skill content and drops `scripts/` and `agents/`:
 
 ```bash
 scripts/build-xhs-package.sh
-# output: dist/world-cup-match-predictor-noscript/
+# output: dist/leonard-world-cup/
 ```
 
 Nothing else changes — odds are converted by hand using `references/modeling.md`.

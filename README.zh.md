@@ -49,13 +49,13 @@ python3 skills/world-cup-match-predictor/scripts/normalize_odds.py 1.80 3.60 4.8
 
 该脚本是**可选项**。Skill 也能按 `references/modeling.md` 里的步骤手动完成同样的去水转换。
 
-## 无 py 版本（用于禁止 `.py` 上传的平台）
+## 纯 Markdown 版本（用于只接受 `.md` / `.txt` 的平台）
 
-部分平台（如小红书）不接受 `.py` 文件。用下面的命令生成一份不含 `scripts/` 文件夹的 skill 副本：
+部分平台（如小红书）只接受 Markdown / 文本文件，不接受 `.py` 和 `.yaml`。用下面的命令生成一份只保留 Markdown 内容、去掉 `scripts/` 和 `agents/` 的副本：
 
 ```bash
 scripts/build-xhs-package.sh
-# 输出：dist/world-cup-match-predictor-noscript/
+# 输出：dist/leonard-world-cup/
 ```
 
 其余无需改动——赔率改用 `references/modeling.md` 的步骤手算。
