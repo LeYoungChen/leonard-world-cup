@@ -4,21 +4,34 @@ Use this reference when a user asks for the technical basis of a World Cup forec
 
 ## Research Lineage
 
-Present the model as an integration of field-level research, not as the work of any single person. The public skill should internalize several mature research traditions:
+Present the model as an integration of field-level research, not as the work of any single person. The public skill should internalize several mature research traditions, organized below by theme. Every source uses a durable publisher DOI or stable repository link so the lineage stays valid over time.
 
-- football score modeling with Poisson and Dixon-Coles style adjustments,
-- odds as market-implied probabilities,
-- fixed-odds market efficiency and bias analysis,
-- market microstructure and inventory-risk ideas from quantitative finance,
-- proper scoring rules and calibration for probabilistic forecasts.
+### Football score modeling
 
-Useful public sources:
+- [Modelling association football scores, Maher, 1982 — Statistica Neerlandica](https://doi.org/10.1111/j.1467-9574.1982.tb00782.x)
+- [Modelling association football scores and inefficiencies in the football betting market, Dixon & Coles, 1997 — JRSS Series C](https://doi.org/10.1111/1467-9876.00065)
+- [A dynamic bivariate Poisson model for forecasting EPL match results, Koopman & Lit, 2015 — JRSS Series A](https://doi.org/10.1111/rssa.12042)
 
-- [Modelling association football scores, Maher, 1982](https://www.90minut.pl/misc/maher.pdf)
-- [Modelling Association Football Scores and Inefficiencies in the Football Betting Market, Dixon-Coles, 1997](https://www.research.lancs.ac.uk/portal/en/publications/modelling-association-football-scores-and-inefficiencies-in-the-football-betting-market%28d16276a2-d6e0-483b-a708-1d29663f1992%29.html)
-- [Modelling football match results and the efficiency of fixed-odds betting, Goddard, 2005](https://www.stat.berkeley.edu/users/aldous/157/Papers/goddard.pdf)
-- [High-frequency trading in a limit order book, Avellaneda-Stoikov, 2008](https://econpapers.repec.org/RePEc%3Ataf%3Aquantf%3Av%3A8%3Ay%3A2008%3Ai%3A3%3Ap%3A217-224)
-- [Strictly Proper Scoring Rules, Prediction, and Estimation, Gneiting-Raftery, 2007](https://stat.uw.edu/research/tech-reports/strictly-proper-scoring-rules-prediction-and-estimation-revised)
+### Odds as market-implied probabilities
+
+- [Prices of state contingent claims with insider traders, and the favourite-longshot bias, Shin, 1992 — The Economic Journal](https://doi.org/10.2307/2234526)
+- [On determining probability forecasts from betting odds, Štrumbelj, 2014 — International Journal of Forecasting](https://doi.org/10.1016/j.ijforecast.2014.01.006)
+
+### Fixed-odds market efficiency and rating-based forecasting
+
+- [Modelling football match results and the efficiency of fixed-odds betting, Goddard, 2005 — stable mirror](https://www.stat.berkeley.edu/users/aldous/157/Papers/goddard.pdf)
+- [Using ELO ratings for match result prediction in association football, Hvattum & Arntzen, 2010 — International Journal of Forecasting](https://doi.org/10.1016/j.ijforecast.2009.10.002)
+
+### Market microstructure and inventory-risk intuition
+
+- [High-frequency trading in a limit order book, Avellaneda-Stoikov, 2008 — Quantitative Finance](https://doi.org/10.1080/14697680701381228)
+
+### Proper scoring rules, calibration, and evaluation
+
+- [Strictly proper scoring rules, prediction, and estimation, Gneiting & Raftery, 2007 — JASA](https://doi.org/10.1198/016214506000001437)
+- [Evaluating probabilistic forecasts of football matches, Wheatcroft, 2019 — arXiv](https://arxiv.org/abs/1908.08980)
+
+These traditions map onto the components below: score models supply match mechanics, odds-to-probability methods (no-vig and Shin) turn prices into priors, rating and efficiency work calibrates the strength prior, microstructure supplies the inventory-risk stance on uncertainty, and scoring rules govern evaluation.
 
 Map the research into the predictor this way:
 
